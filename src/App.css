@@ -109,7 +109,7 @@ h1 {
   border: none;
   padding: 0.5rem;
   animation: pulse-text 2s infinite;
-  background-color: #332f46;
+  background-color: #2f3246;
   text-align: center;
   text-transform: uppercase;
 }
@@ -266,13 +266,13 @@ ol {
 
 @keyframes pulse-text {
   0% {
-    color: #e1dec7;
+    color: #c7d2e1;
   }
   50% {
-    color: #9f9d83;
+    color: #838f9f;
   }
   100% {
-    color: #e1dec7;
+    color: #c7d2e1;
   }
 }
 
