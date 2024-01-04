@@ -210,12 +210,12 @@ ol {
 }
 
 #game-board-mobile button {
-  width: 5rem;
-  height: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border: none;
   background: #8892ac;
   color: #00153f;
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
   font-family: 'Times New Roman', cursive;
 }
