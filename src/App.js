@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import './App.css';
 import PlayerInfo from './components/PlayerInfo';
 import GameBoard from './components/GameBoard';
@@ -85,16 +85,31 @@ function App() {
       }
     })
   }
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    
+    const isMobile = width <= 768;
+
   return (
     <main>
      <header><h1>TIC-TAC-TOE</h1></header>
     <div id="game-container">
       <ol id="players" className="highlight-player">
-        <PlayerInfo initialName={PLAYERS.X} symbol="X" isActive={activePlayer==='X'} onChangeName={handlePlayerName}/>
-        <PlayerInfo initialName={PLAYERS.O} symbol="O" isActive={activePlayer==='O'} onChangeName={handlePlayerName}/>
+        <PlayerInfo initialName={PLAYERS.X} symbol="X" isActive={activePlayer==='X'} onChangeName={handlePlayerName} isMobile={isMobile}/>
+        <PlayerInfo initialName={PLAYERS.O} symbol="O" isActive={activePlayer==='O'} onChangeName={handlePlayerName} isMobile={isMobile}/>
       </ol>
       {(winner || hasDraw) ? <GameOver winner={winner} onRestart={handleRestart}/> : <></>}
-      <GameBoard onSelectSquare={handleSelectSquare} activesPlayerSymbol={activePlayer} board={gameBoard}/>
+      <GameBoard onSelectSquare={handleSelectSquare} activesPlayerSymbol={activePlayer} board={gameBoard} isMobile={isMobile}/>
     </div>
     <Log turns={gameTurns}/>
     </main>

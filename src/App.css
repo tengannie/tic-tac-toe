@@ -62,6 +62,7 @@ h1 {
 }
 
 #players.highlight-player li.active .player-name,
+#players.highlight-player li.active .player-name-mobile,
 #players.highlight-player li.active .player-symbol {
   color: #5a81f6;
 }
@@ -79,19 +80,47 @@ h1 {
 }
 
 #players button:hover {
-  color: #5a81f6;
+  color: #cccfd6;
 }
 
 .player {
-  border: 2px solid transparent;
   padding: 0.5rem;
+  font-weight: bold;
+}
+
+.player-mobile {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 4px;
   font-weight: bold;
+  text-align: center;
+}
+
+.player-mobile button{
+  color: #c7d2e1;
+  font-weight: bold;
+  width: 4rem;
+  margin: auto;
+  text-align: center;
 }
 
 .player-name {
   display: inline-block;
   width: 10rem;
+  font-size: 1rem;
+  color: #c7d2e1;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.player-name-mobile {
+  display: inline-block;
   font-size: 1rem;
   color: #c7d2e1;
   text-transform: uppercase;
@@ -155,6 +184,33 @@ ol {
   cursor: pointer;
   font-family: 'Times New Roman', cursive;
   padding: 1rem;
+}
+
+#game-board-mobile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  flex-direction: column;
+}
+
+#game-board-mobile ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#game-board-mobile button {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  background: #8892ac;
+  color: #00153f;
+  font-size: 4rem;
+  cursor: pointer;
+  font-family: 'Times New Roman', cursive;
 }
 
 #game-over {
@@ -290,15 +346,15 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #5a74f6;
+    border-color: #7ba1e3;
     box-shadow: 0 0 0 0 rgba(90, 139, 246, 0.4);
   }
   50% {
-    border-color: #4531f8;
+    border-color: #3170f8;
     box-shadow: 0 0 0 0.5rem rgba(49, 82, 248, 0);
   }
   100% {
-    border-color: #5a6cf6;
+    border-color: #5a8ef6;
     box-shadow: 0 0 0 0 rgba(90, 95, 246, 0);
   }
 }

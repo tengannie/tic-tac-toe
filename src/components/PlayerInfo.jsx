@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function PlayerInfo({initialName,symbol, isActive, onChangeName}) {
+export default function PlayerInfo({initialName,symbol, isActive, onChangeName, isMobile}) {
     const [playerName, setPlayerName] = useState(initialName)
     const [isEditing, setIsEditing] = useState(false)
 
@@ -14,13 +14,15 @@ export default function PlayerInfo({initialName,symbol, isActive, onChangeName})
         }
     }
 
+    const mobileCSS = isMobile ? "-mobile" : ''
+
     return(
         <li className={isActive ? "active" : undefined}>
-          <span className="player">
-            {isEditing ? <input type="text" value={playerName} onChange={handleChange}/> : <span className="player-name">{playerName}</span>}
-            <span className="player-symbol">{symbol}</span>
-          </span>
+          <div className={`player${mobileCSS}`}>
+          <span className="player-symbol">{symbol}</span>
+            {isEditing ? <input type="text" value={playerName} onChange={handleChange}/> : <span className={`player-name${mobileCSS}`}>{playerName}</span>}
           <button onClick={handleEditClick}>{isEditing ? "Save" : "Edit"}</button>
+          </div>
         </li>
     )
 }
