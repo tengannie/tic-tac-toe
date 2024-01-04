@@ -39,6 +39,13 @@ h1 {
   position: relative;
 }
 
+#game-container-mobile {
+  max-width: 45rem;
+  padding: 1rem;
+  background: linear-gradient(#242938, #171a28);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
 #players {
   list-style: none;
   padding: 0;

@@ -103,7 +103,7 @@ function App() {
   return (
     <main>
      <header><h1>TIC-TAC-TOE</h1></header>
-    <div id="game-container">
+    <div id={isMobile ? "game-container-mobile" : "game-container"}>
       <ol id="players" className="highlight-player">
         <PlayerInfo initialName={PLAYERS.X} symbol="X" isActive={activePlayer==='X'} onChangeName={handlePlayerName} isMobile={isMobile}/>
         <PlayerInfo initialName={PLAYERS.O} symbol="O" isActive={activePlayer==='O'} onChangeName={handlePlayerName} isMobile={isMobile}/>
